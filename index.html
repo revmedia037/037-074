@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
+    <title>Huarong Water Conservancy and Hydropower Construction Engineering Co., Ltd.</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+    
+
+    <style>
+        .bg-about{
+            background-color:#010920;
+        }
+        .bg-footer{
+            background-color:#06102c;
+        }
+        .bg-icons{
+            background-color:#06102e;
+        }
+        .bg-cards{
+            background-color:#080c16;
+        }
+        .bg-cover-home {
+            background-image: url('./assets/bg.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .bg-cover-contact {
+            background-image: url('./assets/footerbg.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        @media (max-width: 768px) {
+            .navbar {
+                background-color:#010920 !important; /* bg-neutral-700 */
+            }
+            
+        }
+            /* Container for the logo and text content */
+        footer .container {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        /* Logo size */
+        footer img {
+            height: 40px; /* Adjust the height as needed */
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script>
+        function toggleMenu() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            const homeSection = document.getElementById('home');
+            const homeSectionHeight = homeSection.offsetHeight;
+
+            if (window.scrollY > homeSectionHeight || window.innerWidth <= 768) {
+                navbar.classList.add('bg-neutral-700');
+            } else {
+                navbar.classList.remove('bg-neutral-700');
+            }
+        });
+    </script>
+</head>
+<body class="bg-gray-100 text-gray-900">
+    <!-- Navbar -->
+    <nav id="navbar" class="navbar bg-transparent fixed w-full z-10 top-0">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <div class="text-2xl font-bold text-white">
+                <img src="./assets/logo.png" alt="">
+            </div>
+            <div class="md:hidden">
+                <button class="text-white focus:outline-none" onclick="toggleMenu()">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="hidden md:flex space-x-4">
+                <a href="#home" class="text-white hover:text-blue-500">Home</a>
+                <a href="#about" class="text-white hover:text-blue-500">About</a>
+                <a href="#contact" class="text-white hover:text-blue-500">Contact</a>
+            </div>
+        </div>
+        <div class="hidden md:hidden" id="mobile-menu">
+            <a href="#home" class="block text-white hover:text-blue-500 px-4 py-2">Home</a>
+            <a href="#about" class="block text-white hover:text-blue-500 px-4 py-2">About</a>
+            <a href="#contact" class="block text-white hover:text-blue-500 px-4 py-2">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="bg-cover-home text-white h-screen flex items-center justify-center relative">
+        <div class="absolute top-0 left-0 w-full h-full bg-black opacity-80"></div>
+        <div class="text-center relative z-10">
+            <h1 class="text-5xl font-bold mb-4">
+                Huarong Water Conservancy and Hydropower Construction Engineering Co., Ltd.
+            </h1>
+            <p class="text-sm  md:text-xl mb-8 subtitle">
+                Building Sustainable Water Solutions
+            </p>
+            <a href="#about" class="bg-white text-black py-2 px-4 rounded-full">Learn More</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 text-white bg-about" >
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12">Services</h2>
+            <p class="text-center text-xl mb-12">
+                Engineering Excellence in Water and Power
+            </p>
+            <div class="flex flex-wrap">
+                <!-- Text and Icon Cards -->
+                <div class="w-full md:w-1/2 px-4">
+                    <div class="mb-8 p-6 bg-cards rounded-lg flex items-start">
+                        <div class="w-12 h-12 flex-shrink-0 bg-icons rounded-full flex items-center justify-center mr-4">
+                            <svg class="h-8 w-8 text-cyan-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M8 9l5 5v7h-5v-4m0 4h-5v-7l5 -5m1 1v-6a1 1 0 0 1 1 -1h10a1 1 0 0 1 1 1v17h-8" />  <line x1="13" y1="7" x2="13" y2="7.01" />  <line x1="17" y1="7" x2="17" y2="7.01" />  <line x1="17" y1="11" x2="17" y2="11.01" />  <line x1="17" y1="15" x2="17" y2="15.01" /></svg>
+
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">
+                                Construction and Engineering Projects
+                            </h3>
+                            <p>
+                                Huarong Water Conservancy and Hydropower Construction Engineering Co., Ltd. specializes in large-scale construction projects, including water conservancy and hydropower infrastructure. Our expertise extends to residential interior decoration and construction labor subcontracting. We ensure the highest standards of quality and safety in all our projects, leveraging advanced engineering techniques and materials to deliver durable and efficient solutions. Our licensed and experienced professionals are dedicated to achieving excellence in every project, from initial planning to final execution.
+                            </p>
+                            </div>
+                    </div>
+                    <div class="mb-8 p-6 bg-cards rounded-lg flex items-start">
+                        <div class="w-12 h-12 flex-shrink-0 bg-icons rounded-full flex items-center justify-center mr-4">
+                            <svg class="h-8 w-8 text-cyan-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M8 9l5 5v7h-5v-4m0 4h-5v-7l5 -5m1 1v-6a1 1 0 0 1 1 -1h10a1 1 0 0 1 1 1v17h-8" />  <line x1="13" y1="7" x2="13" y2="7.01" />  <line x1="17" y1="7" x2="17" y2="7.01" />  <line x1="17" y1="11" x2="17" y2="11.01" />  <line x1="17" y1="15" x2="17" y2="15.01" /></svg>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">
+                                Consulting and Project Management Services
+                            </h3>
+                            <p> 
+                                We offer comprehensive project management and consulting services related to water conservancy and hydropower. Our team provides strategic guidance and technical support to ensure the successful completion of projects on time and within budget. We also engage in foreign contracted projects, bringing our expertise to international markets. Our consulting services cover various aspects of water resource management, hydropower development, and construction, helping clients navigate complex regulatory environments and achieve their project goals effectively.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-cards rounded-lg flex items-start">
+                        <div class="w-12 h-12 flex-shrink-0 bg-icons rounded-full flex items-center justify-center mr-4">
+                            <svg class="h-8 w-8 text-cyan-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <line x1="3" y1="19" x2="21" y2="19" />  <rect x="5" y="6" width="14" height="10" rx="1" /></svg>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">
+                                Sales and Investment Services
+                            </h3>
+                            <p>
+                                Huarong Water Conservancy and Hydropower Construction Engineering Co., Ltd. is involved in the sales of high-quality construction materials, ensuring that clients have access to the best resources for their projects. Additionally, we manage asset investments with our own capital, engaging in strategic investment activities to drive growth and innovation within the industry. Our services also include mineral processing and other related activities, providing a comprehensive suite of solutions to support the diverse needs of our clients in the construction and engineering sectors.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Images -->
+                <div class="w-full md:w-1/2 px-4 flex flex-wrap">
+                    <div class="w-1/2 p-2">
+                        <img src="./assets/pic1.jpg" alt="Image 1" class="rounded-lg shadow-lg">
+                    </div>
+                    <div class="w-1/2 p-2">
+                        <img src="./assets/pic2.jpg" alt="Image 2" class="rounded-lg shadow-lg">
+                    </div>
+                    <div class="w-1/2 p-2">
+                        <img src="./assets/pic3.jpg" alt="Image 3" class="rounded-lg shadow-lg">
+                    </div>
+                    <div class="w-1/2 p-2">
+                        <img src="./assets/pic4.jpg" alt="Image 4" class="rounded-lg shadow-lg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ 
+    <Section id="contact" class=" bg-cover-contact bg-gray-800 text-white py-20 ">
+       
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12">Contact Us</h2>
+            <div class="flex flex-wrap justify-center">
+                <div class="w-full md:w-1/2 px-4 mb-8">
+                    <h3 class="text-2xl font-bold mb-4">Get In Touch</h3>
+                    <p>If you have any questions, feel free to reach out to us. We're here to help!</p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-white hover:text-blue-500">
+                            <i class="fa fa-facebook fa-2x"></i>
+                        </a>
+                        <a href="#" class="text-white hover:text-blue-500">
+                            <i class="fa fa-twitter fa-2x"></i>
+                        </a>
+                        <a href="#" class="text-white hover:text-blue-500">
+                            <i class="fa fa-linkedin fa-2x"></i>
+                        </a>
+                        <a href="#" class="text-white hover:text-blue-500">
+                            <i class="fa fa-instagram fa-2x"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 px-4 mb-8">
+                    <form onsubmit="window.location.reload();">
+                        <div class="mb-4">
+                            <label class="block mb-2">Name</label>
+                            <input type="text" class="w-full px-4 py-2 text-gray-900" placeholder="Your Name">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block mb-2">Email</label>
+                            <input type="email" class="w-full px-4 py-2 text-gray-900" placeholder="Your Email">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block mb-2">Message</label>
+                            <textarea class="w-full px-4 py-2 text-gray-900" rows="4" placeholder="Your Message"></textarea>
+                        </div>
+                        <button type="submit" class="bg-white text-black py-2 px-4 rounded-full">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </Section>
+
+    <!-- Footer -->
+<footer class="bg-footer text-white py-6 flex items-center justify-between">
+    <div class="container mx-auto px-6 flex items-center">
+        <img src="./assets/logo.png" alt="Logo" class="h-8 mr-2">
+        <div>
+            <h2 class="text-sm md:text-lg font-bold">
+                Limited liability company (a sole proprietorship of a legal person that is not invested or controlled by a natural person)
+            </h2>
+            <p class="text-xs md:text-base">
+                April 13, 1993
+            </p>
+            <p class="text-xs md:text-base">
+                Zhanghua Town, Huarong County, Yueyang City, Hunan Province (Room 701, 7th Floor, Comprehensive Service Building, Yangjiaqiao Innovation Industrial Park, Huarong High-tech Zone)
+            </p>
+        </div>
+    </div>
+    <div class="container mx-auto px-6">
+        <p class="text-center mx-4 text-xs md:text-base">© 2024 Huarong Water Conservancy and Hydropower Construction Engineering Co., Ltd. All Rights Reserved.</p>
+    </div>
+</footer>
+
+    <!-- Scroll to Top Button -->
+    <button onclick="scrollToTop()" class="fixed bottom-5 right-5 bg-white text-black p-2 rounded-full shadow-md">
+        Top ↑
+    </button>
+</body>
+</html>
