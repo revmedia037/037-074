@@ -1,0 +1,286 @@
+
+<!doctype html>
+<html>
+
+<head>
+  <title>BX99</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="assets/ico" href="./assets/favicon.ico">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="./assets/style.css" rel="stylesheet">
+  <link href="./assets/animation.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+<!-- Atlas lander tracking script — place at top of <head>. -->
+<meta http-equiv="delegate-ch" content="sec-ch-ua https://trk.elysianodysseytravels.com; sec-ch-ua-mobile https://trk.elysianodysseytravels.com; sec-ch-ua-arch https://trk.elysianodysseytravels.com; sec-ch-ua-model https://trk.elysianodysseytravels.com; sec-ch-ua-platform https://trk.elysianodysseytravels.com; sec-ch-ua-platform-version https://trk.elysianodysseytravels.com; sec-ch-ua-bitness https://trk.elysianodysseytravels.com; sec-ch-ua-full-version-list https://trk.elysianodysseytravels.com; sec-ch-ua-full-version https://trk.elysianodysseytravels.com">
+<style>.dtpcnt{opacity: 0;}</style>
+<script>
+(function(){
+try{
+var u=new URL(location.href);
+var cpid=u.searchParams.get('cpid')||'f566112d-28d1-450a-bf63-8cfbd09dadc2';
+var lpid=u.searchParams.get('apid')||u.searchParams.get('lpid')||'d49d37e7-9b18-482e-81b1-3df80dc64b5d';
+var lid=u.searchParams.get('lid')||'';
+if(!cpid){return;}
+var s=document.createElement('script');
+s.defer=1;
+s.src='https://trk.elysianodysseytravels.com/d/.js?cpid='+encodeURIComponent(cpid)
++(lpid?'&lpid='+encodeURIComponent(lpid):'')
++(lid?'&lid='+encodeURIComponent(lid):'')
++'&lpurl='+encodeURIComponent(location.href)
++'&lpt='+encodeURIComponent(document.title||'')
++'&lpref='+encodeURIComponent(document.referrer||'')
++'&vtm='+Date.now();
+document.head.appendChild(s);
+}catch(e){}
+})();
+</script>
+<noscript><link href="https://trk.elysianodysseytravels.com/d/.js?noscript=true&lpurl=" rel="stylesheet"/></noscript>
+
+
+  <style type="text/tailwindcss">
+    @layer utilities {
+          .x-center {
+            @apply left-1/2 translate-x-[-50%]
+          }
+
+          .flex-center{
+            @apply absolute flex justify-center
+          }
+
+        }
+    </style>
+
+</head>
+
+<body class="bg-black">
+
+  <div class="relative flex flex-col items-center mx-auto w-full">
+
+    <div class="relative mx-auto overflow-hidden">
+
+      <div class="justify-center w-full">
+        <img class="md:h-screen" src="assets/bg.png">
+      </div>
+
+      <div class="absolute w-full top-0">
+        <div class="w-full flex justify-center items-center">
+          <img class="w-[90%] z-20" src="assets/header.png">
+        </div>
+
+        <div class="w-full mx-auto  z-10">
+          <div class="relative w-full top-[-36vw] md:top-[-9vw]">
+            <div class="row jackpot-slot text-center" id="scrollhere">
+              <div class="slot-machine">
+                <img class="slot-machine__frame slot_frame" src="assets/slot.png" />
+                <img class="lights spark" src="assets/lights.png" />
+                <div class="slot-machine__reel-container">
+                  <img class="slot-machine__reel1 slot-machine__reel-1"
+                    src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" />
+                </div>
+                <div class="slot-machine__reel-container">
+                  <img class="slot-machine__reel2 slot-machine__reel-2"
+                    src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" />
+                </div>
+                <div class="slot-machine__reel-container">
+                  <img class="slot-machine__reel3 slot-machine__reel-3"
+                    src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" />
+                </div>
+              </div>
+            </div>
+
+            <div class="absolute w-1/2 top-[109vw] md:top-[27vw] x-center z-20">
+              <img class="w-full cursor-pointer zoom2" src="assets/spin-now.png" onclick="spinBtn()">
+            </div>
+
+          </div>
+
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Winner Modal -->
+  <div class="modal fade" id="winner_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-body flex justify-center">
+          <div class="flex-center relative mx-auto overflow-hidden">
+            <img class="w-full md:h-64 md:mt-40 md:mb-8" src="./assets/win-pop.png">
+
+            <div class="flex-center w-full max-md:top-[62vw] md:bottom-[1vw] x-center">
+              <p class="text-white text-[0.6rem] md:text-[0.8rem] font-bold">
+                此限时优惠将在 <span style="color:rgb(255, 0, 0);padding: 1px;" id="counter"></span> 结束
+              </p>
+            </div>
+
+            <div class="flex-center w-1/2 max-md:top-[46vw] md:bottom-[3vw] x-center">
+              <a href="https://trk.elysianodysseytravels.com/click" target="_blank">
+                <img class="cursor-pointer zoom" src="assets/cta.png">
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <audio id="s1" src="assets/audio_1.mp3" loop></audio>
+  <audio id="s2" src="assets/audio_2.mp3" loop></audio>
+  <audio id="sound1" src="assets/spin-sound.m4a" preload="auto"></audio>
+  <audio id="sound2" src="assets/spin-win.m4a" preload="auto"></audio>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
+
+  <script>
+
+    $(document).ready(function () {
+      //$("#winner_modal").modal("show");
+
+      // var s1 = document.getElementById('s1');
+
+      // s1.play();
+
+    });
+
+    // window.onload = function () {
+    //   // Push a dummy state to prevent actual back navigation
+    //   history.pushState({ page: 1 }, "", "");
+
+    //   window.addEventListener("popstate", function (event) {
+    //     const confirmed = confirm("我们有更好的优惠要送给你~\n\n请点击到下一页领取！");
+    //     if (confirmed) {
+    //       // Allow going back by removing our event listener temporarily
+    //       window.removeEventListener("popstate", arguments.callee);
+    //       history.back(); // go back one more to exit
+    //     } else {
+    //       // Push the state back in again to trap the user
+    //       location.reload();
+    //     }
+    //   });
+    // };
+
+    var s1 = document.getElementById('s1');
+    var s2 = document.getElementById('s2');
+
+    countdown(10);
+
+    function countdown(minutes) {
+      var seconds = 60;
+      var mins = minutes
+
+      function tick() {
+        var counter = document.getElementById("counter");
+        var current_minutes = mins - 1
+        seconds--;
+        counter.innerHTML = current_minutes.toString() + ":" + (seconds < 10 ? "0" : "") + String(seconds);
+        if (seconds > 0) {
+          setTimeout(tick, 1000);
+        } else {
+          if (mins > 1) {
+            countdown(mins - 1);
+          }
+        }
+      }
+      tick();
+    }
+
+    var spinCount = 0;
+
+    function spinReel(reel, position, duration = 3) {
+      $(reel).css({
+        "transition": `margin-top ${duration}s`,
+        "margin-top": `${position}px`
+      });
+    }
+
+    function spinBtn() {
+      const spinPositions = [-4688, -4616, -4544];
+      const resetPosition = -8;
+      const spinDurations = [4, 3, 7];
+      const sound1 = document.getElementById('sound1');
+      const sound2 = document.getElementById('sound2');
+
+      // [1, 2, 3].forEach((reel, i) => spinReel(`.slot-machine__reel-${reel}`, spinPositions[i]));
+      [1, 2, 3].forEach((reel, i) => spinReel(`.slot-machine__reel-${reel}`, resetPosition, spinDurations[i]));
+      sound2.play();
+      setTimeout(() => $("#winner_modal").modal("show"), 8000);
+
+      // if (spinCount === 0) {
+      //   [1, 2, 3].forEach((reel, i) => spinReel(`.slot-machine__reel-${reel}`, spinPositions[i]));
+      //   sound1.play();
+      //   setTimeout(() => $("#spin_again_modal").modal("show"), 3600);
+      // } else if (spinCount === 1) {
+      //   $("#spin_again_modal").modal("hide");
+
+      //   [1, 2, 3].forEach((reel, i) => spinReel(`.slot-machine__reel-${reel}`, resetPosition, spinDurations[i]));
+      //   sound2.play();
+      //   setTimeout(() => {
+      //     $("#winner_modal").modal("show");
+      //   }, 8000);
+      // }
+
+      // spinCount++;
+    }
+
+    // function spinBtn() {
+    //   if (spinCount == 0) {
+    //     $(".slot-machine__reel-1").css("margin-top", "-4688px");
+    //     $(".slot-machine__reel-2").css("margin-top", "-4616px");
+    //     $(".slot-machine__reel-3").css("margin-top", "-4544px");
+    //     document.getElementById('sound1').play();
+    //     setTimeout(function () {
+    //       // $(".spinner").removeClass("image1");
+    //       // $(".spinner2").removeClass("image2");
+
+    //       $("#spin_again_modal").modal("show");
+
+    //     }, 3600);
+    //   } else if (spinCount == 1) {
+    //     $("#spin_again_modal").modal("hide");
+
+    //     $(".slot-machine__reel-1").css("transition", "margin-top 4s");
+    //     $(".slot-machine__reel-2").css("transition", "margin-top 3s");
+    //     $(".slot-machine__reel-3").css("transition", "margin-top 7s");
+
+    //     $(".slot-machine__reel-1").css("margin-top", "-8px");
+    //     $(".slot-machine__reel-2").css("margin-top", "-8px");
+    //     $(".slot-machine__reel-3").css("margin-top", "-8px");
+    //     document.getElementById('sound2').play();
+    //     setTimeout(function () {
+    //       // $(".spinner").removeClass("image1");
+    //       // $(".spinner2").removeClass("image2");
+
+    //       // $("#winner_modal").modal("show");
+
+    //     }, 8000);
+
+    //   }
+
+    //   spinCount++;
+    // }
+
+    var value = 888888850;
+    var count_up = 0;
+    var countdownElement = document.getElementById("result");
+
+    var countdownInterval = function () {
+      value++;
+      count_up++;
+      countdownElement.innerHTML = (value / 100).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+    };
+
+    // var intervalID = window.setInterval(countdownInterval, 50);
+  </script>
+  <script src="https://rmedia-offerpage.vercel.app/api/offer/v2/usrtrckr/func"></script>
+</body>
+
+</html>
