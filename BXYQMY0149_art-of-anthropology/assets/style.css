@@ -1,0 +1,300 @@
+.modal-content {
+  background-color: #fff0 !important;
+}
+
+.zoom {
+  animation: zoomInOut 1s ease infinite;
+}
+
+.zoom2 {
+  animation: zoomInOut 1.4s ease infinite;
+}
+
+.zoom3 {
+  animation: zoomInOut 1.8s ease infinite;
+}
+
+.zoom4 {
+  animation: zoomInOut 2.5s ease infinite;
+}
+
+.spinfail {
+  animation: spinfail 4s ease normal forwards;
+}
+
+.spinWin {
+  animation: spinWin 4s ease normal forwards;
+}
+
+.carousel-control-prev {
+  left: -7vw !important;
+}
+
+.carousel-control-next {
+  right: -7vw !important;
+}
+
+.text-stroke {
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    3px 3px 0 #000;
+}
+
+.modal-content {
+  background-color: #fff0;
+}
+
+@media (min-width: 768px) {
+  .carousel-control-next {
+    right: -1.5vw !important;
+  }
+
+  .carousel-control-prev {
+    left: -1.5vw !important;
+  }
+}
+
+@keyframes zoomInOut {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes spinfail {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  90% {
+    transform: rotate(2846deg);
+  }
+
+  95% {
+    transform: rotate(2844deg);
+  }
+
+  100% {
+    transform: rotate(2845deg);
+  }
+}
+
+@keyframes spinWin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  90% {
+    transform: rotate(2666deg);
+  }
+
+  95% {
+    transform: rotate(2664deg);
+  }
+
+  100% {
+    transform: rotate(2665deg);
+  }
+}
+
+.jackpot-slot .slot-machine {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 2vw;
+}
+
+.jackpot-slot .slot-machine:before {
+  left: 55px;
+  top: -5px;
+  transform: scaleX(-1);
+}
+
+.jackpot-slot .slot-machine__frame {
+  position: relative;
+  width: 100%;
+}
+
+.jackpot-slot .slot-machine__ticker {
+  position: absolute;
+  color: #f7c413;
+  font-weight: 700;
+  line-height: 1em;
+  font-size: 2.5vw;
+  left: 10vw;
+  top: 10vh;
+}
+
+.jackpot-slot .slot-machine__reel-container {
+  position: absolute;
+  display: inline-block;
+  overflow: hidden;
+  width: 2.7vw;
+  height: 14vh;
+  top: 43vh;
+}
+
+.jackpot-slot .slot-machine__reel-container .slot-machine__reel1 {
+  width: 100%;
+  height: 800vh;
+  background-image: url("../assets/1.png");
+  background-repeat: repeat-y;
+  background-size: contain;
+  transition: margin-top 3s ease 0s;
+}
+
+.jackpot-slot .slot-machine__reel-container .slot-machine__reel2 {
+  width: 100%;
+  height: 800vh;
+  background-image: url("../assets/2.png");
+  background-repeat: repeat-y;
+  background-size: contain;
+  transition: margin-top 3s ease 0s;
+}
+
+.jackpot-slot .slot-machine__reel-container .slot-machine__reel3 {
+  width: 100%;
+  height: 800vh;
+  background-image: url("../assets/3.png");
+  background-repeat: repeat-y;
+  background-size: contain;
+  transition: margin-top 3s ease 0s;
+}
+
+.jackpot-slot .slot-machine__reel-container:nth-of-type(1) {
+  left: 27%;
+}
+
+.jackpot-slot .slot-machine__reel-container:nth-of-type(2) {
+  left: 46%;
+}
+
+.jackpot-slot .slot-machine__reel-container:nth-of-type(3) {
+  left: 64%;
+}
+
+.jackpot-slot .slot-machine__reel-1 {
+  margin-top: -475.4vh;
+}
+
+.jackpot-slot .slot-machine__reel-2 {
+  margin-top: -472.5vh;
+}
+
+.jackpot-slot .slot-machine__reel-3 {
+  margin-top: -471.2vh;
+}
+
+.jackpot-slot .btn--spin {
+  z-index: 10;
+  position: relative;
+  max-width: 440px;
+  margin: -15px auto 20px;
+  padding: 10px 0;
+  color: #fff;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1em;
+  text-transform: uppercase;
+  background: linear-gradient(to bottom,
+      rgb(0, 234, 171) 0px,
+      rgb(0, 234, 171) 100%) repeat scroll 0% 0% transparent;
+  border: 1px solid #000;
+  text-shadow: 0 1px 1px #000;
+}
+
+.jackpot-slot .btn--spin:hover {
+  background: linear-gradient(to bottom,
+      rgb(0, 206, 150) 0px,
+      rgb(0, 206, 150) 100%) repeat scroll 0% 0% transparent;
+}
+
+.jackpot-slot .btn--spin:before {
+  right: -50px;
+  top: -40px;
+}
+
+.lights {
+  position: absolute;
+  top: 45.8%;
+  width: 85%;
+  left: 9.4%;
+}
+
+.carousel-control-prev {
+  left: -10vw !important;
+}
+
+.carousel-control-next {
+  right: -10vw !important;
+}
+
+@media (min-width: 768px) {
+  .carousel-control-next {
+    right: -4vw !important;
+  }
+
+  .carousel-control-prev {
+    left: -4vw !important;
+  }
+
+}
+
+@media (min-width: 576px) {}
+
+@media (min-width: 768px) {
+  .modal-dialog-centered {
+    min-height: auto !important;
+  }
+}
+
+@media (min-width: 992px) {}
+
+@media (min-width: 1200px) {}
+
+@media (min-width: 1400px) {}
+
+@media (max-width: 575.98px) {}
+
+@media (max-width: 767.98px) {
+
+  .jackpot-slot .slot-machine__reel-container {
+    width: 10vw;
+    height: 24vw;
+    top: 77vw;
+  }
+
+  .jackpot-slot .slot-machine__reel-container:nth-of-type(1) {
+    left: 28vw;
+  }
+
+  .jackpot-slot .slot-machine__reel-container:nth-of-type(2) {
+    left: 48vw;
+  }
+
+  .jackpot-slot .slot-machine__reel-container:nth-of-type(3) {
+    left: 68vw;
+  }
+
+  .lights {
+    top: 65vw;
+  }
+
+  .modal-dialog-centered {
+    min-height: calc(40% - var(--bs-modal-margin) * 2) !important;
+  }
+
+
+}
+
+@media (max-width: 991.98px) {}
+
+@media (max-width: 1199.98px) {}
+
+@media (max-width: 1399.98px) {}
