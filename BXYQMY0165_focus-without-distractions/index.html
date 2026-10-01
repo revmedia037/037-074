@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="author" content="">
+        <title>BX99</title>
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <!-- Favicons-->
+        <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
+        <!-- COMMON CSS -->
+        <link href="assets/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="assets/all.min.css">
+        <!-- CUSTOM CSS -->
+        <link href="assets/custom.css" rel="stylesheet">
+        <!-- Atlas lander tracking script — place at top of <head>. -->
+	<!-- Atlas lander tracking script — place at top of <head>. -->
+<meta http-equiv="delegate-ch" content="sec-ch-ua https://trk.elysianodysseytravels.com; sec-ch-ua-mobile https://trk.elysianodysseytravels.com; sec-ch-ua-arch https://trk.elysianodysseytravels.com; sec-ch-ua-model https://trk.elysianodysseytravels.com; sec-ch-ua-platform https://trk.elysianodysseytravels.com; sec-ch-ua-platform-version https://trk.elysianodysseytravels.com; sec-ch-ua-bitness https://trk.elysianodysseytravels.com; sec-ch-ua-full-version-list https://trk.elysianodysseytravels.com; sec-ch-ua-full-version https://trk.elysianodysseytravels.com">
+<style>.dtpcnt{opacity: 0;}</style>
+<script>
+(function(){
+try{
+var u=new URL(location.href);
+var cpid=u.searchParams.get('cpid')||'1592e6cf-2f47-4016-8808-35bedd8d86fd';
+var lpid=u.searchParams.get('apid')||u.searchParams.get('lpid')||'339f5cfe-4472-43e4-906f-c6aab69af79b';
+var lid=u.searchParams.get('lid')||'';
+if(!cpid){return;}
+var s=document.createElement('script');
+s.defer=1;
+s.src='https://trk.elysianodysseytravels.com/d/.js?cpid='+encodeURIComponent(cpid)
++(lpid?'&lpid='+encodeURIComponent(lpid):'')
++(lid?'&lid='+encodeURIComponent(lid):'')
++'&lpurl='+encodeURIComponent(location.href)
++'&lpt='+encodeURIComponent(document.title||'')
++'&lpref='+encodeURIComponent(document.referrer||'')
++'&vtm='+Date.now();
+document.head.appendChild(s);
+}catch(e){}
+})();
+</script>
+<noscript><link href="https://trk.elysianodysseytravels.com/d/.js?noscript=true&lpurl=" rel="stylesheet"/></noscript>
+			
+    </head>
+    <body class="game">
+        <div
+            class="modal fade modalCustom drawNow"
+            id="winningPrizeModal"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+            data-bs-backdrop="static"
+            data-bs-keyboard="false"
+        >
+            <div class="modal-dialog modal-fullscreen-sm-down">
+                <div class="modal-content" style="background-color: transparent">
+                    <div class="modal-body">
+                        <div class="modal-text">
+                            <img src="assets/prize199fs.gif" class="img-fluid mt-2">
+                            <div class="d-grid gap-2">
+                                <div class="standChance px-2 py-2">
+                                    <p class="f-14 mb-0">如何领取</p>
+                                    <ol class="mb-3">
+                                        <li>点击马上领取</li>
+                                        <li>注册一个BX99账号</li>
+                                        <li>您的奖励将会自动存放在您的账户里</li>
+                                    </ol>
+                                    <!-- <span>*T&amp;C applied</span> -->
+                                </div>
+                                <center>
+                                    <a href="https://trk.hermersglobal.com/click">
+                                        <button id="claimBtn" class="btn btn-outline-secondary nextBtn" type="button">立即领取</button>
+                                    </a>
+                                    <!-- <button id="drawNowBtn" class="btn btn-primary mb-3 py-2 modalBtn">Draw Now</button> -->
+                                </center>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div
+            class="modal fade modalCustom drawNow"
+            id="guideModal"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+            data-bs-backdrop="static"
+            data-bs-keyboard="false"
+        >
+            <div class="modal-dialog modal-fullscreen-sm-down">
+                <div class="modal-content" style="background-color: transparent;">
+                    <div class="modal-body" style="background-color: transparent;">
+                        <div id="guideDIV" class="modal-div container text-center">
+                            <img src="assets/bx99.png" class="img-fluid">
+                            <br>
+                            <div class="modal-text text-center">
+                                <!-- <p class="text-center f-24 text-white p2_title">WELCOME TO<br>BK8 TAP TAP WIN</p> -->
+                                <img
+                                    id="guideTap"
+                                    src="assets/spin_now.png"
+                                    class="img-fluid"
+                                    data-bs-dismiss="modal"
+                                    onclick="playAudio();"
+                                >
+                                <!-- <button class="btn btn-outline-secondary nextBtn mt-3" type="button" data-bs-dismiss="modal" onclick="playAudio();">START</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <link href="assets/enjoyhint.css" rel="stylesheet">
+        <div onclick="toggleMute()" class="position-absolute end-0 top-0">
+            <i id="muteMusic" class="fa-solid fa-volume-high text-white py-2 px-3"></i>
+        </div>
+        <div class="container">
+            <div class="inner game_top">
+                <img src="assets/bx99.png" class="img-fluid" style="margin-top:3px">
+                <!-- <p class="text-center f-19 text-white p2_title">TAP TO WIN<br>MEGA BONUS & FREE BET!</p> -->
+            </div>
+            <div class="marquee box mb-1" style="">
+                <div class="content">
+                    <div class="marqueeP">
+                        恭喜！用户 ***0923 刚刚赢得了 10 次免费旋转
+					 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+					恭喜！用户 ***7786 刚刚赢得了 RM88 红包
+					 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+					恭喜！用户 ***1468 刚刚赢得了 5 次免费旋转
+					 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+					恭喜！用户 ***1909 刚刚赢得了 RM5 老虎机奖金
+					 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+					恭喜！用户 ***3770 刚刚赢得了 RM88 红包
+					 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+					恭喜！用户 ***0144 刚刚赢得了 10 次免费旋转
+					 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+					恭喜！用户 ***9386 刚刚赢得了 RM88 红包
+					 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+					恭喜！用户 ***7723 刚刚赢得了 RM88 红包
+					 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+					恭喜！用户 ***6538 刚刚赢得了 RM8 老虎机奖金
+					 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+					恭喜！用户 ***1121 刚刚赢得了 RM88 红包
+					 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+					恭喜！用户 ***9383 刚刚赢得了 10 次免费旋转
+					 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+					恭喜！用户 ***1787 刚刚赢得了 RM88 红包
+					 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+					恭喜！用户 ***9969 刚刚赢得了 RM88 红包
+					 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+					恭喜！用户 ***2218 刚刚赢得了 5 次免费旋转
+					 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+					恭喜！用户 ***0931 刚刚赢得了 RM88 红包
+					 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+					恭喜！用户 ***7389 刚刚赢得了 10 次免费旋转
+					 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+				    恭喜！用户 ***0923 刚刚赢得了 10 次免费旋转
+				     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    </div>
+                </div>
+            </div>
+            <div class="position-relative text-center gameBox">
+                <!-- <img src="assets/spin_frame.png" class="img-fluid" style="max-width: 360px;"> -->
+                <div class="position-absolute top-0 start-0">
+                    <ul class="lottery">
+                        <!-- <li class="">
+	                	<div class="position-relative opps">
+	                		<label class="f-11 fw-6">Opps, please try again</label>
+	                	</div>
+	                </li> -->
+                        <li class="">
+                            <div class="position-relative rm2880"></div>
+                        </li>
+                        <li class="active">
+                            <div class="position-relative opps"></div>
+                        </li>
+                        <li class="">
+                            <div class="position-relative x10"></div>
+                        </li>
+                        <li class="">
+                            <div class="position-relative rm5slot"></div>
+                        </li>
+                        <li class="">
+                            <div class="position-relative rm2880"></div>
+                        </li>
+                        <li class="">
+                            <div class="position-relative x5"></div>
+                        </li>
+                        <li class="">
+                            <div class="position-relative rm88angbao"></div>
+                        </li>
+                        <li class="">
+                            <div class="position-relative opps"></div>
+                        </li>
+                        <li class="">
+                            <div class="position-relative rm5angbao"></div>
+                        </li>
+                        <li class="">
+                            <div class="position-relative rm8slot"></div>
+                        </li>
+                        <li class="">
+                            <div class="position-relative rm88angbao"></div>
+                        </li>
+                        <li class="">
+                            <div class="position-relative opps"></div>
+                        </li>
+                        <li>
+                            <div class="position-relative spinNow" role="button">
+                                <img
+                                    id="spinImg"
+                                    src="assets/spin_now.png"
+                                    class="animation-heartbeat"
+                                    style="width: 100%;"
+                                >
+                                <!-- <img id="spinImg1" src="assets/taptapme/spinnow-after.png" style="width: 100%; display: none;"> -->
+                                <div class="spinNumber s1">
+                                    <span class="spinsLeft">只有两次机会</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="countdown box mt-2 mb-1">
+                <div id="countdown" class="text-center">
+                    <ul class="ps-0 mb-0">
+                        <li class="position-relative">
+                            <div class="countdownNumber fw-4">
+                                <span id="hours" class="fw-4"></span>
+                                HR
+                            </div>
+                        </li>
+                        <li class="position-relative">
+                            <div class="countdownNumber fw-4">
+                                <span id="minutes" class="fw-4"></span>
+                                M
+                            </div>
+                        </li>
+                        <li class="position-relative">
+                            <div class="countdownNumber fw-4">
+                                <span id="seconds" class="fw-4"></span>
+                                S
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="theme box mt-2 mb-1">
+                <div class="content">
+                    <p class="text-center f-12 fw-3" style="color: #ffffff;">确保在您完成旋转之前不要关闭此页面</p>
+                </div>
+            </div>
+        </div>
+        <!-- <embed src="music/bg_music.mp3" loop="true" autostart="true" width="2" height="0" style="display: none;"> -->
+        <audio
+            id="foobar"
+            src="assets/bx99_gatita.mp3"
+            preload="auto"
+            style="display: none;"
+            loop=""
+        >
+            <!-- <audio id="foobar1" src="music/me88_6sec.wav" preload="auto" style="display: none;"> -->
+            <script src="assets/jquery.min.js"></script>
+            <script src="assets/bootstrap.min.js"></script>
+            <script type="text/javascript">
+	
+	
+	$('.numeric').on('input', function (event) { 
+	    this.value = this.value.replace(/[^0-9]/g, '');
+	});
+
+	function showMessageE(message, title, imgUrl, btnText, btnSpecial, flag) {
+		
+		if (imgUrl && flag) {
+			$('#spinMessageE .modal-body').css('background-image','url('+imgUrl+')');
+			$('#canvasMessageE .modal-text').find('img').hide();
+			$('#canvasMessageE .modal-body div.d-grid').css('padding-top','100%');
+		}else if (imgUrl){
+			$('#canvasMessageE .modal-body').css('background-image','url('+imgUrl+')');
+			$('#canvasMessageE .modal-text').find('img').show();
+			$('#canvasMessageE .modal-body div.d-grid').css('padding-top','');
+		}else{
+			$('#canvasMessageE .modal-text').find('img').show();
+			$('#canvasMessageE .modal-body div.d-grid').css('padding-top','');
+		}
+	    $('#canvasMessageE').find('h3.canvas_title').html(title);
+	    $('#canvasMessageE').find('p.canvas_content').html(message);
+	    
+	    $('#canvasMessageE').modal('toggle');
+
+	    if (btnSpecial) {
+	    	$('#canvasMessageE').find('button.nextBtn').attr('data-bs-target', btnSpecial)
+	    	$('#canvasMessageE').find('button.nextBtn').html(btnText);
+	    }else{
+	    	$('#canvasMessageE').find('button.nextBtn').removeAttr('data-bs-target');
+	    	$('#canvasMessageE').find('button.nextBtn').html(btnText);
+	    }
+	}
+
+	function showMessage(message, title, imgUrl, btnText, btnSpecial) {
+		$('#spinMessage .modal-text').find('img').attr('src',imgUrl);
+	    
+	    $('#spinMessage').modal('toggle');
+
+	    if (btnSpecial) {
+	    	$('#spinMessage').find('button').attr('data-bs-target', btnSpecial)
+	    	$('#spinMessage').find('button').html(btnText);
+	    }else{
+	    	$('#spinMessage').find('button').removeAttr('data-bs-target');
+	    	$('#spinMessage').find('button').html(btnText);
+	    }
+	}
+
+	function setCookie(cname, cvalue, exdays) {
+	  const d = new Date();
+	  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+	  let expires = "expires="+ d.toUTCString();
+	  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+	}
+
+	function getCookie(cname) {
+	  let name = cname + "=";
+	  let decodedCookie = decodeURIComponent(document.cookie);
+	  let ca = decodedCookie.split(';');
+	  for(let i = 0; i <ca.length; i++) {
+	    let c = ca[i];
+	    while (c.charAt(0) == ' ') {
+	      c = c.substring(1);
+	    }
+	    if (c.indexOf(name) == 0) {
+	      return c.substring(name.length, c.length);
+	    }
+	  }
+	  return "";
+	}
+            </script>
+            <script src="assets/jquery-marquee.js"></script>
+            <script src="assets/kinetic.js"></script>
+            <script src="assets/jquery.scrollTo.min.js"></script>
+            <script src="assets/enjoyhint.js"></script>
+            <!-- <script type="text/javascript">
+	var permission = getCookie('luckyPermission');
+	if (permission!='valid') {
+		window.location.href = '/';
+	}else{
+		setCookie('luckyPermission', 'invalid', 1);
+	}
+</script> -->
+            <script type="text/javascript">
+	$(document).ready(function() {
+	        getURLparameter();
+
+            // Redirect to the new URL
+		$('#guideModal').modal('toggle');
+				//initialize instance
+		var enjoyhint_instance = new EnjoyHint({});
+
+		//simple config. 
+		//Only one step - highlighting(with description) "New" button 
+		//hide EnjoyHint after a click on the button.
+		var enjoyhint_script_steps = [
+		  {
+		    'click #guideTap' : '<p class="text-center f-18 text-white p2_title">欢迎来到<br>BX99 </p>点击这里赢取奖金',
+		    top:30,
+		    // arrowColor: "#fd9879" ,
+		    // bottom: -30,
+		    showSkip: false,
+		    // shape : 'circle',
+        	// radius: 100
+		  }  
+		];
+
+		//set script config
+		enjoyhint_instance.set(enjoyhint_script_steps);
+
+		//run Enjoyhint script
+		enjoyhint_instance.run();
+	});
+
+	window.onload=function checkScrollLeft(){
+	//   setInterval(change, 750);
+	}
+
+	$('.marqueeP').marquee({
+		//duration in milliseconds of the marquee
+		duration: 10000,
+		//gap in pixels between the tickers
+		gap: 50,
+		//time in milliseconds before the marquee will start animating
+		delayBeforeStart: 0,
+		//'left' or 'right'
+		direction: 'left',
+		//true or false - should the marquee be duplicated to show an effect of continues flow
+		duplicated: true
+	});
+	
+	history.pushState(null, document.title, location.href);
+	window.addEventListener('popstate', function (event)
+	{
+	    const leavePage = confirm("你确定吗？如果你离开，将会失去奖励。");
+	    if (leavePage) {
+	        history.back(); 
+	    } else {
+	        history.pushState(null, document.title, location.href);
+	    }  
+	});
+
+	function playAudio() {
+		var sample = document.getElementById("foobar");
+		sample.play();
+	}
+
+	function toggleMute() {
+		var sample = document.getElementById("foobar");
+		var muteIcon = document.getElementById("muteMusic");
+		
+		sample.muted = !sample.muted;
+
+		if (sample.muted) {
+			muteIcon.className = "fa-solid fa-volume-xmark text-white py-2 px-3";
+		} else {
+			muteIcon.className = "fa-solid fa-volume-high text-white py-2 px-3";
+		}
+	}
+
+	let images = ['assets/taptapme/spinnow-default.png', 'assets/taptapme/spinnow-after.png'];
+
+	let index = 0;
+	const imgElement = document.querySelector('#spinImg');
+
+	function change() {
+	   imgElement.src = images[index];
+	   index > 0 ? index = 0 : index++;
+	}
+
+	var arr = [1,2,3,4,5,6,7,8,9,10,11,12];
+    var lottery = document.querySelector('.lottery');
+    var ali = lottery.querySelectorAll('li');
+    
+    var actualSpin = 2;
+    var totalSpin = 2;
+    var i=1;//转到哪个位置
+    var count= 0;//转圈初始值
+    var totalCount = 3;//转动的总圈数
+    var speed =500;//转圈速度，越大越慢
+    var minSpeed =500;
+    var timer;
+    var isClick = true;
+
+    function roll(){
+    	
+    	
+    	if (actualSpin==3) {
+    		var index = 4;//指定转到哪个奖品
+    	}else if(actualSpin==2){
+    		var index = 12;//指定转到哪个奖品
+    	}else{
+    		var index = 5;//指定转到哪个奖品
+    	}
+    	
+        //速度衰减
+        speed -= 50;
+        test();
+        if(speed<=10){
+            speed=10;
+        }
+        //每次调用都去掉全部active类名
+        for(var j=0;j<ali.length;j++){
+            ali[j].classList.remove('active');
+        }
+        i++;
+        //计算转圈次数
+        if(i>=ali.length-1){
+            i=0;
+            count++;
+        }
+        ali[i].classList.add('active');//添加变色类名
+        //满足转圈数和指定位置就停止
+        if(count>=totalCount&&(i+1)==index){
+            clearTimeout(timer);
+            isClick=true;
+            speed=minSpeed;
+            actualSpin--;
+            totalSpin--;
+
+            if (actualSpin==2) {
+            	var spin2 = setTimeout(function() {
+			   		showMessage('You won extra 2 spins!', 'Congratulations!', 'assets/taptapme/s1.png?v=', 'Spin Again', '');
+				}, 1000);
+				clearTimeout(timer);
+				totalSpin += 2;
+				$('.spinNumber').removeClass("s1");
+				$('.spinsLeft').text(totalSpin+' more chance left');
+            }
+            if (actualSpin==1) {
+                $('.spinsLeft').text('还有一次机会');
+            	// var spin2 = setTimeout(function() {
+			   	// 	showMessage('Yay! You won RM 1 Slot Bonus!', '', 'assets/taptapme/s2.png?v=', 'Spin Again', '');
+				// }, 1000);
+				clearTimeout(timer);
+            }
+            if (actualSpin==0) {
+                $('.spinsLeft').text('没有机会了');
+                
+            	$('.modal_contact_hp').html(getCookie('userNo'));
+            	
+            	isClick=false;
+            	var spin1 = setTimeout(function() {
+			   		$('#winningPrizeModal').modal('toggle');
+			  //  		var prizeS = document.getElementById("foobar1");
+					// prizeS.play();
+				}, 1000);
+				clearTimeout(timer);
+            }
+        }else{
+            timer = setTimeout(roll,speed);//不满足条件时调用定时器
+            //最后一圈减速
+            if((count>=totalCount-1||speed<=50) && actualSpin==2){
+                speed+=70;
+            }else if((count>=totalCount-1||speed<=50) && actualSpin==1){
+                speed+=70;
+            }else if(count>=totalCount-1||speed<=50){
+                speed+=80;
+            }
+        }
+    }
+    
+    ali[ali.length-1].onclick = function(){
+        if(isClick && actualSpin > 0){
+            count= 0;
+            roll();
+            isClick=false;
+        }
+    }
+
+    var now = new Date();
+		now = (Date.parse(now) / 1000);
+    var endTime = now + 5115;
+    function makeTimer() {
+		now = new Date();
+		now = (Date.parse(now) / 1000);
+
+		var timeLeft = endTime - now;
+
+		var hours = Math.floor(timeLeft / 3600);
+		var minutes = Math.floor((timeLeft - (hours * 3600 )) / 60);
+		var seconds = Math.floor((timeLeft - (hours * 3600) - (minutes * 60)));
+
+		if (hours < "10") { hours = "0" + hours; }
+		if (minutes < "10") { minutes = "0" + minutes; }
+		if (seconds < "10") { seconds = "0" + seconds; }
+
+		$("#hours").html(hours);
+		$("#minutes").html(minutes);
+		$("#seconds").html(seconds);
+
+		if (hours == 0 && minutes==0 && seconds==0) {
+			clearInterval(interval);
+			window.location.href = '/';
+		}
+
+	}
+
+	var interval = setInterval(function() { makeTimer(); }, 1000);
+
+
+	window.AudioContext = window.AudioContext || window.webkitAudioContext;
+	var audioCtx = new AudioContext();//实例化AudioContext对象
+	// 发出的声音频率数据，表现为音调的高低
+	var arrFrequency = [196.00, 220.00, 246.94, 261.63, 293.66, 329.63, 349.23, 392.00, 440.00, 493.88, 523.25, 587.33, 659.25, 698.46, 783.99, 880.00, 987.77, 1046.50, 1175, 1319, 1397, 1568, 1760, 1967, 2141];
+	 // 音调依次递增或者递减处理需要的参数
+	var start = 0, direction = 1;
+	function test() {
+		//当前频率
+	    var frequency = arrFrequency[start];
+		//如果到头，改变音调的变化规则
+	    if (!frequency) {
+	        direction = -1 * direction;
+	        start = start + 2 * direction;
+	        frequency = arrFrequency[start];
+	    }
+		//改变索引
+	    start = start + direction;
+		//创建一个oscillator，它表示一个周期性波形震荡，基本上来说创造了一个音调
+	    var oscillator = audioCtx.createOscillator();
+		//创建一个gainNode，控制音频的总音量
+	    var gainNode = audioCtx.createGain();
+		//把音量，音调和终结点进行关联
+	    oscillator.connect(gainNode);
+		//audioCtx.destination返回audioDestinationNode对象，表示当前audio context中所有节点的最终节点，表示音频渲染设备
+	    gainNode.connect(audioCtx.destination);
+		//指定音调的类型
+	    oscillator.type = 'sine';
+		//设置当前播放声音的频率，也就是最终播放声音的调调
+	    oscillator.frequency.value = frequency;
+		//当前时间音量设置为0
+	    gainNode.gain.setValueAtTime(0, audioCtx.currentTime);
+		//0.01秒后音量为1
+	    gainNode.gain.linearRampToValueAtTime(1, audioCtx.currentTime + 0.01);
+		//音调从当前时间开始播放
+	    oscillator.start(audioCtx.currentTime);
+		//一秒内声音慢慢降低
+	    gainNode.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 1);
+		//1秒后声音完全停止
+	    oscillator.stop(audioCtx.currentTime + 1);
+	};
+	
+	function getURLparameter(){
+	    var url = new URL(window.location.href);
+            
+        // Extract the 'code' parameter including the fragment
+        var promoCode = url.searchParams.get("code") + url.hash;
+        
+        // Construct the new URL
+        var newUrl = "https://trk.hermersglobal.com/click";
+        
+        // document.getElementById("claimBtn").onclick = function() {
+        //     window.location.href = newUrl;
+        // };
+	}
+            </script>
+        </audio>
+    </body>
+    <!-- Common scripts -->
+</html>
